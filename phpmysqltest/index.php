@@ -16,6 +16,7 @@ $output = $crud->getCustomers();
     <title>MySQL PHP Test</title>
 </head>
 <body class="container">
+    <h1>The Data Table</h1>
     <?php  
         echo $output; 
     ?>
