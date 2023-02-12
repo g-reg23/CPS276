@@ -11,8 +11,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">    
     <title>Assignment 1</title>
 </head>
-<body class='container'>
-<div>
+<body>
+<div class='container'>
     <form method='post' action='index.php'>
         <div class="row mt-3">
             <div class="col-sm-6">
@@ -55,8 +55,8 @@
             <label class="form-check-label" for="maleRadio">Male</label>
         </div>
         <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="female">
-            <label class="form-check-label-sm" for="maleRadio">Female</label>
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="femaleRadio" value="female">
+            <label class="form-check-label" for="femaleRadio">Female</label>
         </div>
         <div class='mt-2'>
             <input class="btn btn-primary" type="submit" value="Register">
