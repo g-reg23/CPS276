@@ -1,13 +1,21 @@
 <?php
     $link = '';
+    $message = '';
    if(count($_POST) > 0){
     if (strlen($_POST['readmetext']) === 0 || strlen($_POST['folderName']) === 0) {
-        echo "Please fill out the form";
+        $message = "Please fill out the form";
     } else {
+        $message = '';
         require_once 'directories.php';
         $directory = new Directories();
         $file = $directory->createDirAndFile();
-        $link = "https://russet-v8.wccnet.edu/~sgm114/assignments/assignment5/".$file;
+        if ($file === 'A directory already exists with that name' || $file === 'Error creating file') {
+            $message = $file;
+        }
+        else {
+            $link = "https://russet-v8.wccnet.edu/~sgm114/assignments/assignment5/".$file;
+            $message = "File and directory were created.";
+        }
     }
 }
 ?>
@@ -22,13 +30,14 @@
 <body>
     <div class="container">
         <h1 class='mt-3'>File and Directory Assignment</h1>
-        <p>Enter a folder name and contents of a file. Folder names should contain alpha numeric characters only.</p>
+        <p>Enter a folder name and the contents of a file. Folder names should contain alpha numeric characters only.</p>
+        <p><?php echo $message ?></p>
+        <?php echo strlen($link) > 0 ? "<p><a href='{$link}'>Path where file located</a></p>" : "" ?>
         <form method='post' action='index.php'>
             <div class='row mt-2'>
                 <label for="folderName" class="form-label">Folder Name</label>
                 <input type="text" class="form-control" id="folderName" name='folderName' >
             </div>
-            <?php echo strlen($link) > 0 ? "<p><a href='{$link}'>Link to File</a></p>" : "" ?>
             <div class="row mt-2">
                 <label for="namelist" class="form-label">File Content</label>
                 <textarea style="height: 150px;" class="form-control" id="readmetext" name="readmetext"></textarea>
