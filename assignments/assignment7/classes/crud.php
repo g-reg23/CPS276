@@ -4,8 +4,6 @@ require 'pdo_methods.php';
 class Crud extends PdoMethods{
 
 	public function getFiles(){
-		
-		/* CREATE AN INSTANCE OF THE PDOMETHODS CLASS*/
 		$pdo = new PdoMethods();
 
 		/* CREATE THE SQL */
