@@ -10,7 +10,6 @@
           ];
           echo json_encode($response);
     }else {
-        $i = 0;
         $list = '<div>';
         foreach ($records as $row) {
             $list .= '<p>'.$row['name'].'</p>';
