@@ -3,11 +3,11 @@
     
     function addNote() {
         $pdo = new PdoMethods();
-        $sql = "INSERT INTO notes_ii (note, date_time) VALUES (:note, :date_time)";
+        $sql = "INSERT INTO notes (note, date_time) VALUES (:note, :date_time)";
         $timestamp = strtotime($_POST['dateTime']);
         $bindings = [
             [':note',$_POST['note'],'str'],
-            ['date_time', date("Y-m-d H:i:s", $timestamp), 'str']
+            ['date_time', strtotime($_POST['dateTime']), 'int']
         ];
         $result = $pdo->otherBinded($sql, $bindings);
         if($result === 'error'){
