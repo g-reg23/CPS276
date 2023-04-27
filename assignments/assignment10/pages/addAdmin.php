@@ -64,7 +64,7 @@ $elementsArr = [
 		"errorMessage"=>"<span style='color: red; margin-left: 15px;'>Password must be at least 8 chars.</span>",
     "errorOutput"=>"",
     "type"=>"text",
-      "value"=>"*******",
+      "value"=>"password",
       "regex"=>"password"
   ],
   "status"=>[
